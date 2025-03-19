@@ -1,0 +1,28 @@
+{
+  "name": "landingpage-im-still-here",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gloriaoliveira/landingpage-im-still-here.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gloriaoliveira/landingpage-im-still-here/issues"
+  },
+  "homepage": "https://github.com/gloriaoliveira/landingpage-im-still-here#readme",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.85.1"
+  }
+}
