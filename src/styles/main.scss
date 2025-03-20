@@ -1,5 +1,54 @@
-$bgColor: #f0f0f0;
+@use 'hero';
 
-body {
-    background-color: $bgColor;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$backgroundColorLight: #17253B;
+$backgroundColorDark: #040D1B;
+$textColor: #FFFFFF;
+$buttonColorPrimary: #AA6402;
+$buttonColorSecondary: #FF9807;
+
+@mixin text ($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    
+}
+
+.text {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $textColor;
+}
+
+.text--button {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    color: $textColor;
+}
+
+.text--medium {
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: $textColor;
+}
+
+.title {
+    font-family: "Inter", sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: $textColor;
+}
+
+.title--big {
+    font-family: "Inter", sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: $textColor;
 }
