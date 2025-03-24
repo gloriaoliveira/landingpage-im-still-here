@@ -1,31 +1,81 @@
+@use 'variables';
+
+.header{
+    position: absolute; // Permite que fique sobre a .hero
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 10vw;
+    margin: 0 auto;
+  
+    
+    &__container {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1440px;       
+        display: flex;    
+    
+    }
+
+    &__nav {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+        gap: 54px;
+        
+        &-item a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        &-item {
+
+            &:hover {
+                border-bottom: 2px solid variables.$buttonColorSecondary;
+            }
+
+            .button:hover {
+                background-color: lighten(variables.$buttonColorSecondary, 5%);
+            }
+            
+        }
+        
+    }
+}
+
 .hero {
     min-height: 95vh;
     background-image: url('/src/images/hero-img.png');
     background-size: cover;
     background-position: center;
     display: flex;
-    align-items: center;
-    padding: 0 10vw;
+    justify-content: center; // Centraliza o container na tela
+    align-items: center; 
+    padding: 0 10vw;// Centraliza verticalmente, se necessário
+
+    &__container {
+        display: flex;
+        justify-content: flex-start; // Mantém o conteúdo à esquerda dentro do container
+        align-items: flex-start;
+        width: 100%;
+        max-width: 1440px; // Limita a largura máxima
+         // Adiciona espaçamento lateral para responsividade
+    }
 
     &__content {
-        max-width: 640px;
+        max-width: 640px; // Define um limite de largura para o conteúdo
         min-width: 300px;
+        width: 100%; // Para ocupar toda a largura disponível dentro do container
 
         h1 {
             margin-bottom: 24px;
         }
 
-       &__buttons {
+        &__buttons {
             display: flex;
             gap: 16px;
             padding-top: 40px;
-
-            button {
-                flex-grow: 1; /* Faz com que os botões cresçam igualmente */
-                max-width: 230PX; /* Limita o tamanho máximo dos botões */
-                width: 100%; 
-            }
         }
-
     }
 }

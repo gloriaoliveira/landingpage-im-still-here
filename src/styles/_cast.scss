@@ -1,0 +1,63 @@
+@use 'variables';
+
+.cast {
+    width: 100%;
+    background-color: variables.$backgroundColorLight;
+    margin: 0 auto;
+    padding: 80px 10vw;
+    overflow: hidden;
+
+    &__container {
+        max-width: 1440px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 48px;
+        margin: 0 auto;
+    }
+
+    .carousel {
+        width: 100%;
+        overflow: visible;
+
+        &__track {
+            display: flex;
+            gap: 32px;
+        }
+
+        &__item {
+            flex: 0 0 auto;
+            position: relative;
+            width: 100%;
+            
+            img {
+                width: auto;
+                height: auto;
+                display: block;
+                transition: opacity 0.5s ease;
+            }
+
+            .bw {
+                position: relative;
+                opacity: 1;
+            }
+
+            .color {
+                position: absolute;
+                top: 0;
+                // Para corresponder ao margin do bw
+                opacity: 0;
+            }
+
+            &:hover {
+                .bw {
+                    opacity: 0;
+                }
+                .color {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

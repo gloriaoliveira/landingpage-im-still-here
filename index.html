@@ -8,26 +8,123 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../dist/css/main.css">
+    <link rel="stylesheet" href="dist/slick/slick.css">
+     <link rel="stylesheet" href="dist/slick/slick-theme.css">
 </head>
 <body>
+    <header class="header">
+        <nav class="header__container">
+            <ul class="header__nav">
+                <li class="header__nav-item">
+                    <a class="text--regular" href="">AWARDS</a>
+                </li>
+                <li class="header__nav-item">
+                    <a class="text--regular" href="">CAST</a>
+                </li>
+                <li class="header__nav-item">
+                    <a class="button button--primary text--buttons" href="">Watch Now</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <section class="hero">
-        <div class="hero__content">
-            <h1 class="title--big">
-                I'm Still Here
-            </h1>
-            <p class="text--regular">
-                Based on the namesake book, the film portrays Eunice Paiva's struggle after the disappearance of councilman Rubens Paiva during the dictatorship, as she seeks justice and keeps her family together.
-            </p>
-            <div class="hero__content__buttons">
-                <button class="button button--primary">
-                    Watch Now
-                </button>
-                <button class="button button--secondary">
-                    Meet the Cast
-                </button>
+        <div class="hero__container">
+            <div class="hero__content">
+                <h1 class="title--big">
+                    I'm Still Here
+                </h1>
+                <p class="text--regular">
+                    Based on the namesake book, the film portrays Eunice Paiva's struggle after the disappearance of councilman Rubens Paiva during the dictatorship, as she seeks justice and keeps her family together.
+                </p>
+                <div class="hero__content__buttons">
+                    <button class="button button--primary text--buttons">
+                        Watch Now
+                    </button>
+                    <button class="button button--secondary text--buttons">
+                        Meet the Cast
+                    </button>
+                </div>
+                
             </div>
-            
         </div>
     </section>
+    <section class="trailer">
+        <div class="trailer__container">
+            <h2 class="title--medium" >Watch The Trailer</h2>
+            <iframe src="https://www.youtube.com/embed/_NzqP0jmk3o?si=9r1oz7YSa26YyVzg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+    <section class="cast">
+        <div class="cast__container">
+            <h2 class="cast__title title--medium">Cast and Character</h2>
+            <div class="carousel">
+                <div class="carousel__track slick-track">
+                    <div class="carousel__item">
+                        <img src="src/images/fernanda-montenegro-bw.png" alt="Selton Melo" class="bw">
+                        <img src="src/images/fernanda-montenegro-color.png" class='color' alt="Selton Melo">
+                    </div>
+                    <div class="carousel__item">
+                        <img src="src/images/fernanda-torres-bw.png" alt="Personagem 2" class="bw">
+                        <img src="src/images/fernanda-torres-color.png" class='color' alt="Personagem 2">
+                    </div>
+                    <div class="carousel__item">
+                        <img src="src/images/selton-melo-bw.png" alt="Personagem 3" class="bw">
+                        <img src="src/images/selton-melo-color.png" class='color' alt="Personagem 3">
+                    </div>
+                    <div class="carousel__item">
+                        <img src="src/images/luiza-eliana-bw.png" alt="Personagem 4" class="bw">
+                        <img src="src/images/luiza-eliana-color.png" class='color' alt="Personagem 4">
+                    </div>
+                    <div class="carousel__item">
+                        <img src="src/images/valentina-vera-bw.png" alt="Personagem 5" class="bw">
+                        <img src="src/images/valentina-vera-color.png" class='color' alt="Personagem 5">
+                    </div>
+                    <div class="carousel__item">
+                        <img src="src/images/barbara-nalu-bw.png" alt="Personagem 5" class="bw">
+                        <img src="src/images/barbara-nalu-color.png" class='color' alt="Personagem 5">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>    
+    <section class="awards">
+        <div class="awards__container">
+            <h2 class="awards__title title--medium">Awards and Recognition</h2>
+            <div class="awards__content">
+                <div class="awards__content__item">
+                    <img src="src/images/Trophy.svg" alt="">
+                    <h3 class="text--medium">Best International Movie</h3>
+                    <p class="text--regular">2025</p>
+                </div>
+                <div class="awards__content__item">
+                    <img src="src/images/FilmStrip.svg" alt="">
+                    <h3 class="text--medium">Best Movie</h3>
+                    <p class="text--regular">2025</p>
+                </div>
+                <div class="awards__content__item">
+                    <img src="src/images/ShootingStar.png" alt="">
+                    <h3 class="text--medium">Best Actress</h3>
+                    <p class="text--regular">2025</p>
+                </div>
+                <div class="awards__content__item">
+                    <img src="src/images/VideoCamera.svg" alt="">
+                    <h3 class="text--medium">Best Screenplay</h3>
+                    <p class="text--regular">2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__container__icons">
+                <img src="dist/images/Youtube.svg" alt="">
+                <img src="dist/images/Instagram.svg" alt="">
+                <img src="dist/images/Tiktok.svg" alt="">
+            </div>
+            <p class="text--regular">© 2025 Ainda Estou Aqui. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="dist/js/bundle.min.js"></script>
 </body>
 </html>

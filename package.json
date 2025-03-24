@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp",
+    "watch": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,10 +21,24 @@
   },
   "homepage": "https://github.com/gloriaoliveira/landingpage-im-still-here#readme",
   "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.1",
     "gulp": "^5.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^6.0.1",
-    "sass": "^1.85.1"
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.85.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.3"
   }
 }
