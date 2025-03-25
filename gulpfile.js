@@ -8,29 +8,23 @@ const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 
-// 1. Copia HTML para a pasta dist
-function copyHtml() {
-  return gulp.src('./src/*.html')
-    .pipe(gulp.dest('./dist'));
-}
-
-// 2. Processa JavaScript
+// Processa JavaScript (com Babel para ES6)
 function scripts() {
   return browserify({
-    entries: './src/js/main.js',
+    entries: './src/js/main.js',  // Arquivo principal
     debug: true
   })
   .transform(babelify.configure({
     presets: ['@babel/preset-env']
   }))
   .bundle()
-  .pipe(source('bundle.min.js'))
+  .pipe(source('bundle.min.js'))  // Saída minificada
   .pipe(buffer())
   .pipe(uglify())
   .pipe(gulp.dest('./dist/js'));
 }
 
-// 3. Processa CSS
+// Processa SCSS para CSS
 function styles() {
   return gulp.src('./src/styles/main.scss')
     .pipe(sass().on('error', sass.logError))
@@ -38,39 +32,28 @@ function styles() {
     .pipe(gulp.dest('./dist/css'));
 }
 
-// 4. Otimiza imagens
+// Otimiza imagens
 function images() {
   return gulp.src('./src/images/**/*')
     .pipe(imagemin())
     .pipe(gulp.dest('./dist/images'));
 }
 
-// 5. Copia assets do Slick (ATUALIZADO)
+// Copia assets do Slick (CSS/fonts)
 function slickAssets() {
   return gulp.src([
     'node_modules/slick-carousel/slick/slick.css',
     'node_modules/slick-carousel/slick/slick-theme.css',
-    'node_modules/slick-carousel/slick/fonts/**',
-    'node_modules/slick-carousel/slick/ajax-loader.gif'
+    'node_modules/slick-carousel/slick/fonts/**'
   ], { base: 'node_modules/slick-carousel/slick' })
-  .pipe(gulp.dest('./dist/css/slick')); // Agora tudo vai para /css/slick
+  .pipe(gulp.dest('./dist/slick'));
 }
 
-// 6. Move para public (Vercel)
-function moveToPublic() {
-  return gulp.src('./dist/**/*')
-    .pipe(gulp.dest('./public'));
-}
-
-// Task padrão (ORDEM CORRIGIDA)
-exports.default = gulp.series(
-  gulp.parallel(copyHtml, styles, scripts, images, slickAssets),
-  moveToPublic
-);
+// Tarefa padrão
+exports.default = gulp.parallel(styles, scripts, images, slickAssets);
 
 // Watch (para desenvolvimento)
 exports.watch = function() {
-  gulp.watch('./src/*.html', copyHtml);
   gulp.watch('./src/styles/**/*.scss', styles);
   gulp.watch('./src/js/**/*.js', scripts);
   gulp.watch('./src/images/**/*', images);
