@@ -4,8 +4,15 @@
     width: 100%;
     background-color: variables.$backgroundColorLight;
     margin: 0 auto;
-    padding: 80px 10vw;
-    overflow: hidden;
+    padding: 60px 5vw; // Padding menor inicialmente
+
+    &__title.title--medium {
+        
+
+        @media (max-width: 1440px) {
+            font-size: 2.3rem;
+        }
+    }
 
     &__container {
         max-width: 1440px;
@@ -13,29 +20,38 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 48px;
+        gap: 40px; // Gap menor
         margin: 0 auto;
     }
 
     .carousel {
         width: 100%;
-        overflow: visible;
+        position: relative;
 
-        &__track {
-            display: flex;
-            gap: 32px;
+        .slick-list {
+            margin: 0 -8px; // Compensa o padding dos slides
+            padding: 10px 0; // Espaço para hover
+        }
+
+        .slick-slide {
+            padding: 0 8px; // Gap de 16px entre itens (8px de cada lado)
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px); // Efeito mais sutil
+            }
         }
 
         &__item {
-            flex: 0 0 auto;
             position: relative;
             width: 100%;
             
             img {
-                width: auto;
+                width: 100%;
                 height: auto;
                 display: block;
-                transition: opacity 0.5s ease;
+                transition: opacity 0.3s ease;
+                border-radius: 4px;
             }
 
             .bw {
@@ -46,7 +62,7 @@
             .color {
                 position: absolute;
                 top: 0;
-                // Para corresponder ao margin do bw
+                left: 0;
                 opacity: 0;
             }
 
@@ -57,6 +73,43 @@
                 .color {
                     opacity: 1;
                 }
+            }
+        }
+
+        // Setas de navegação
+        .slick-arrow {
+            width: 30px;
+            height: 30px;
+            background: rgba(variables.$backgroundColorDark, 0.7);
+            
+            &:before {
+                font-size: 16px;
+            }
+        }
+
+        .slick-prev {
+            left: -15px;
+            z-index: 1;
+        }
+
+        .slick-next {
+            right: -15px;
+        }
+    }
+
+    // Media Queries ajustadas
+    @media (min-width: 768px) {
+        padding: 80px 10vw;
+
+
+
+        .carousel {
+            .slick-list {
+                margin: 0 -16px; // Gap maior em telas maiores
+            }
+
+            .slick-slide {
+                padding: 0 16px; // Gap de 32px entre itens
             }
         }
     }

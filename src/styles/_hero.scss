@@ -1,20 +1,18 @@
 @use 'variables';
 
-.header{
-    position: absolute; // Permite que fique sobre a .hero
+.header {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     padding: 40px 10vw;
     margin: 0 auto;
-  
-    
+
     &__container {
         margin: 0 auto;
         width: 100%;
-        max-width: 1440px;       
-        display: flex;    
-    
+        max-width: 1440px;
+        display: flex;
     }
 
     &__nav {
@@ -23,14 +21,14 @@
         display: flex;
         justify-content: flex-end;
         gap: 54px;
-        
+
         &-item a {
             text-decoration: none;
             cursor: pointer;
+            font-size: 1.2rem; // Tamanho padrão
         }
 
         &-item {
-
             &:hover {
                 border-bottom: 2px solid variables.$buttonColorSecondary;
             }
@@ -38,9 +36,22 @@
             .button:hover {
                 background-color: lighten(variables.$buttonColorSecondary, 5%);
             }
-            
         }
-        
+    }
+}
+
+// Responsivo para telas menores
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 5vw;
+
+        &__nav {
+            gap: 24px; // Reduz espaço entre os links
+        }
+
+        &__nav-item a {
+            font-size: 1rem; // Reduz tamanho da fonte em telas pequenas
+        }
     }
 }
 
@@ -50,32 +61,48 @@
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: center; // Centraliza o container na tela
-    align-items: center; 
-    padding: 0 10vw;// Centraliza verticalmente, se necessário
+    justify-content: flex-start; // Mantém alinhado à esquerda
+    align-items: center;
+    padding: 0 10vw;
 
     &__container {
         display: flex;
-        justify-content: flex-start; // Mantém o conteúdo à esquerda dentro do container
+        justify-content: flex-start;
         align-items: flex-start;
         width: 100%;
-        max-width: 1440px; // Limita a largura máxima
-         // Adiciona espaçamento lateral para responsividade
+        max-width: 1440px;
     }
 
     &__content {
-        max-width: 640px; // Define um limite de largura para o conteúdo
+        max-width: 640px;
         min-width: 300px;
-        width: 100%; // Para ocupar toda a largura disponível dentro do container
+        width: 100%;
 
         h1 {
             margin-bottom: 24px;
+            font-size: 2.5rem; // Tamanho padrão
         }
 
         &__buttons {
             display: flex;
             gap: 16px;
             padding-top: 40px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 5vw;
+
+        &__content {
+            h1 {
+                font-size: 2rem; 
+            }
+
+            p {
+                font-size: 1rem; 
+            }
         }
     }
 }

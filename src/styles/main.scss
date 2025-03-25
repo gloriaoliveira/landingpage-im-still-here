@@ -98,6 +98,14 @@
     align-items: center;
     gap: 48px;
     align-self: stretch;
+
+    &__title.title--medium {
+        
+
+        @media (max-width: 1440px) {
+            font-size: 2.3rem;
+        }
+    }
     
     &__container {
         max-width: 1440px;

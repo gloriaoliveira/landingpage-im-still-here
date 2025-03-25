@@ -6,21 +6,50 @@ import 'slick-carousel';
 $(document).ready(() => {
   $('.carousel__track').slick({
     dots: true, // Exibe os pontos de navegação
-    infinite: true, // Permite navegação infinita
-    speed: 300, // Velocidade da transição
-    slidesToShow: 3, // Exibe 3 itens por vez
-    slidesToScroll: 1, // Scroll 1 item por vez
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4, // Mostra 4 itens no desktop
+    slidesToScroll: 1,
+    arrows: true, // Mostra setas de navegação
+    centerMode: false,
+    variableWidth: false,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1200,
         settings: {
-          slidesToShow: 2 // Exibe 2 itens em telas menores
+          slidesToShow: 3,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2.5, // Mostra 2.5 itens para indicar scroll
+          centerMode: true,
+          centerPadding: '40px'
         }
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1 // Exibe 1 item em telas muito pequenas
+          slidesToShow: 2,
+          centerMode: false
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1.3, // Mostra 1 item + parte do próximo
+          centerMode: true,
+          centerPadding: '30px',
+          arrows: false // Esconde setas em mobile
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1.1,
+          centerPadding: '20px'
         }
       }
     ]
